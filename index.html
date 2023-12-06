@@ -11,11 +11,19 @@
 </head>
 <body>
     <div class="container">
-        <header style="color: var(--blue700)">DUDU.GG</header>
+        <header style="color: var(--blue700)">DUDU<span style="color: var(--gray900)">.</span>GG</header>
         <form>
-        <input type="text" placeholder="Summoner name" id="summoner-name">
-        <input type="button" value="Search" onclick="searchSummoner()">
+            <input type="text" placeholder="Summoner name" id="summoner-name">
+            <input type="button" value="Search" onclick="searchSummoner()">
         </form>
+    </div>
+
+    <div class="summoner">
+        <div id="summoner-info">
+            <div id="icon"><div id="lvl"></div></div>
+            <div id="name"></div>
+            
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

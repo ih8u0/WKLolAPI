@@ -112,10 +112,9 @@
 }
 
 /* CENTROWANIE */
-body, .container {
+body, .container, .summoner {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
@@ -130,10 +129,11 @@ body {
 header {
     font-size: 750%;
     font-weight: bold;
+    padding: 4rem 0 2rem 0 ;
 }
 
-a {
-    color: var(--yellow900);
+input, header {
+    user-select: none;
 }
 
 input {
@@ -159,4 +159,43 @@ input[type=button]:hover {
 input[type=text] {
     background-color: var(--gray900);
     border-radius: 10px 0 0 10px;
+}
+
+form {
+    margin: 2rem 0 2rem 0;
+}
+
+#summoner-info {
+    font-size: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--yellow900);
+    user-select: none;
+    display: none;
+    font-weight: bold;
+}
+
+#name {
+    text-transform: uppercase;
+}
+
+#icon {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100px;
+    background: #ffffff33;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 2rem;
+    border: 3px solid var(--yellow900);
+}
+
+#lvl {
+    position: absolute;
+    bottom:-10%;
+    background-color: black;
+    box-shadow: black 0 0 10px 10px;
+    border-radius: 100px;
 }
