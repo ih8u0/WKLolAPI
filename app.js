@@ -1,6 +1,25 @@
-const APIKey = "RGAPI-27833041-af4c-4894-9a22-b47293a937ab";
+const APIKey = "RGAPI-9fed9f8d-55ba-4e87-ad33-6f2cddb8f9ee";
 const euneUrl = "https://eun1.api.riotgames.com";
+const championUrl =
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json";
 let summonerName;
+let champions = [];
+const championIconUrl =
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/";
+
+const getMustHaveData = async () => {
+  let dataChampions = await fetch(
+    "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json"
+  );
+  dataChampions = dataChampions.json();
+
+  dataChampions.then((e) => {
+    for (const champion of e) {
+      champions.push({ name: champion.name, id: champion.id });
+    }
+  });
+};
+getMustHaveData();
 
 const searchSummoner = () => {
   summonerName = document.getElementById("summoner-name").value;
@@ -39,4 +58,8 @@ const data = async () => {
   let lvl = document.getElementById("lvl");
   lvl.innerText = summonerLevel;
   // !!!!!!!!!
+
+  for (const champion of champions) {
+    console.log(champion.name + " " + championIconUrl + champion.id + ".png");
+  }
 };
