@@ -251,3 +251,19 @@ h2 {
 .KDA {
     padding: 2rem;
 }
+
+#statistics {
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 120%;
+}
+
+#statistics div {
+    margin: 1rem;
+    text-align: center;
+}
