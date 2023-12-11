@@ -206,12 +206,12 @@ form {
 
 .win, .loose {
     padding: 2rem;
-    margin: 1rem;
+    margin: .5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    min-width: 30vw;
+    width: 30vw;
 }
 
 .win {
@@ -240,6 +240,8 @@ form {
     border: 2px solid black;
     border-radius: 100px;
     text-align: center;
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
 h2 {
