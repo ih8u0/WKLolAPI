@@ -24,7 +24,7 @@
 - imSfn
 - CzarnownikZQuaja
 - DuDi
-- i może jakiś uczeń inny, który gra w LoLa może się pochwali nickiem to się sprawdzi (tylko EUNE)
+- i może jest jakiś uczeń, który gra w LoLa i się pochwali nickiem to się sprawdzi (tylko EUNE)
 
 ###### jeśli coś nie zadziała to troche dziwne bo u mnie działa albo trzeba wygenerować nowy api key
 
