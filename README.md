@@ -1,8 +1,8 @@
+dla WK
+
 # DUDU.GG - Wyszukiwarka graczy League of Legends
 
 ## Używa [API Riot Games](https://developer.riotgames.com/apis) i [CommunityDragon](https://raw.communitydragon.org/)
-
-### otwórz [index.html](index.html)
 
 ### Zwraca:
 
