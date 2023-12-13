@@ -28,4 +28,6 @@
 
 ###### jeśli coś nie zadziała to troche dziwne bo u mnie działa albo trzeba wygenerować nowy api key
 
-![main page img](https://media.discordapp.net/attachments/1008097952599900182/1183894326355427419/image.png?ex=6589fe83&is=65778983&hm=c54ce00fb7ca37a5a92dbf0b4aada72c52f701658af15f518dfb22a17e103adf&=&format=webp&quality=lossless&width=1201&height=675)
+![logo img](https://media.discordapp.net/attachments/1008097952599900182/1184545784755130368/image.png?ex=658c5d3a&is=6579e83a&hm=462e5954c7555a089317380f8481c34f0c5fcf80f63477afa23dbc74dd93eb4a&=&format=webp&quality=lossless&width=1439&height=297)
+![main page img](https://media.discordapp.net/attachments/1008097952599900182/1184545897409953822/image.png?ex=658c5d55&is=6579e855&hm=ad3efe370b8cf4f8d88f37534f310a156b7611cb840f465d42808be38c9025b7&=&format=webp&quality=lossless&width=1190&height=675)
+![main page img](https://media.discordapp.net/attachments/1008097952599900182/1184546035545153536/image.png?ex=658c5d76&is=6579e876&hm=6684f334a1779e0cdf7beef12886d49a10bcc6417ab2c0923724dded71c052f0&=&format=webp&quality=lossless&width=1190&height=675)

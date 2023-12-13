@@ -1,7 +1,4 @@
-// TODO:
-// POZAMIENIAC WSZYSTKIE ZMIENNE GDZIE DODAJE COS DO STRINGA NA TE TAKIE TE NO `COS TU ${ZMIENNA} COS TU`
-
-const APIKey = "RGAPI-1e3a1099-fb22-4933-85fe-066d2a0e6f17";
+const APIKey = ""; // <-- PASTE API KEY BETWEEN ""
 const euneUrl = "https://eun1.api.riotgames.com";
 const europeUrl = "https://europe.api.riotgames.com";
 const championUrl =
@@ -10,9 +7,6 @@ let summonerName;
 let champions = [];
 const championIconUrl =
   "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/";
-let leagueUrl =
-  "https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/";
-
 const getChampions = async () => {
   let dataChampions = await fetch(
     "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json"
@@ -30,6 +24,7 @@ getChampions();
 const searchSummoner = () => {
   summonerName = document.getElementById("summoner-name").value;
   document.getElementById("last-games").innerHTML = "";
+  document.getElementById("statistics").innerHTML = "";
   data();
 };
 
@@ -47,10 +42,7 @@ const data = async () => {
   // USTAWIANIE NA STRONIE
   let info = document.getElementById("summoner-info");
   info.style.display = "flex";
-  let iconUrl =
-    "url('https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/" +
-    summonerIcon +
-    ".png')";
+  let iconUrl = `url('https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/${summonerIcon}.png')`;
 
   let icon = document.getElementById("icon");
   icon.style.background = iconUrl;
@@ -64,7 +56,7 @@ const data = async () => {
   lvl.innerText = summonerLevel;
 
   // STATYSTYKI GRACZA
-  leagueUrl += dataSummoner.id + "?api_key=" + APIKey;
+  let leagueUrl = `https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/${dataSummoner.id}?api_key=${APIKey}`;
   let summonerStats = await fetch(leagueUrl);
   summonerStats = await summonerStats.json();
   const summonerStatsDOM = document.getElementById("statistics");
@@ -116,27 +108,21 @@ const data = async () => {
       element.wins
     }</span><br><span style = "color: red;">Losses: ${
       element.losses
-    }</span><br>winratio: ${
-      Math.round((element.wins / (element.losses + element.wins)) * 100) / 100
-    }%`;
+    }</span><br>winratio: ${Math.round(
+      (element.wins / (element.losses + element.wins)) * 100
+    )}%`;
     summonerStatsDOM.appendChild(statsDOM);
   }
 
   // OSTATNIE GRY
   let puuid = dataSummoner.puuid;
-  let matchesUrl =
-    europeUrl +
-    "/lol/match/v5/matches/by-puuid/" +
-    puuid +
-    "/ids?start=0&count=10&api_key=" +
-    APIKey;
+  let matchesUrl = `${europeUrl}/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=10&api_key=${APIKey}`;
 
   let lastGamesIDs = await fetch(matchesUrl);
   lastGamesIDs = await lastGamesIDs.json();
 
   for (const gameID of lastGamesIDs) {
-    let matchUrl =
-      europeUrl + "/lol/match/v5/matches/" + gameID + "?api_key=" + APIKey;
+    let matchUrl = `${europeUrl}/lol/match/v5/matches/${gameID}?api_key=${APIKey}`;
 
     let gameData = await fetch(matchUrl);
     gameData = await gameData.json();
@@ -167,8 +153,7 @@ const data = async () => {
 
         for (const champion of champions) {
           if ((champion.id = championID)) {
-            championIconDOM.style.background =
-              "url('" + championIconUrl + championID + ".png')";
+            championIconDOM.style.background = `url('${championIconUrl}${championID}.png')`;
             championIconDOM.style.backgroundSize = "contain";
             championIconDOM.style.backgroundPosition = "center";
             championIconDOM.classList = "champ-icon";
@@ -178,7 +163,7 @@ const data = async () => {
         championLevelDOM.innerText = champLevel;
         championLevelDOM.classList = "champ-level";
 
-        kdaDOM.innerText = kills + " / " + deaths + " / " + assists;
+        kdaDOM.innerText = `${kills} /  ${deaths} / ${assists}`;
         kdaDOM.classList = "KDA";
 
         championIconDOM.appendChild(championLevelDOM);
@@ -189,5 +174,4 @@ const data = async () => {
       }
     }
   }
-  // console.log(dataSummoner.id);
 };
